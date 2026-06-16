@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waifu Date Simulation — Your Anime Companion Awaits</title>
+  <meta name="description" content="Meet Kazuha — your personal AI anime companion. Chat, go on dates, unlock stories, and build a real emotional bond." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(160deg, #7b3fa0 0%, #c45bab 100%);
+      padding: 60px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('banner.png') center/cover no-repeat;
+      opacity: 0.18;
+    }
+    .hero-logo {
+      width: 100px;
+      margin: 0 auto 20px;
+      display: block;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 6vw, 48px);
+      color: #fff;
+      font-weight: 800;
+      line-height: 1.2;
+      position: relative;
+    }
+    .hero p {
+      color: rgba(255,255,255,0.85);
+      font-size: 17px;
+      margin: 14px auto 0;
+      max-width: 480px;
+      line-height: 1.6;
+      position: relative;
+    }
+    .badges {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      position: relative;
+    }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+    .cta-btn {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 16px 36px;
+      background: #fff;
+      color: #c45bab;
+      font-weight: 700;
+      font-size: 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      position: relative;
+      transition: transform 0.15s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    /* ── Features ── */
+    .features {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 72px;
+    }
+    .feature.reverse { flex-direction: row-reverse; }
+    .feature-img {
+      flex: 0 0 240px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(196,91,171,0.25);
+    }
+    .feature-img img {
+      width: 100%;
+      display: block;
+    }
+    .feature-img .placeholder {
+      width: 240px;
+      height: 420px;
+      background: linear-gradient(135deg, #f3e8f7, #e8d0f0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #c45bab;
+      font-size: 13px;
+      text-align: center;
+      padding: 20px;
+    }
+    .feature-text h2 {
+      font-size: clamp(22px, 4vw, 32px);
+      color: #2d1a3e;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .feature-text h2 span { color: #c45bab; }
+    .feature-text p {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ── Screenshot strip ── */
+    .strip {
+      background: linear-gradient(135deg, #f9f0fc, #fce8f5);
+      padding: 50px 24px;
+      text-align: center;
+    }
+    .strip h2 {
+      font-size: 26px;
+      color: #2d1a3e;
+      margin-bottom: 32px;
+      font-weight: 800;
+    }
+    .screens {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .screens img {
+      width: 160px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(196,91,171,0.2);
+    }
+
+    /* ── Download ── */
+    .download {
+      text-align: center;
+      padding: 60px 24px;
+    }
+    .download h2 {
+      font-size: 30px;
+      color: #2d1a3e;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .download p {
+      color: #888;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+    .play-btn img { height: 56px; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: #aaa;
+      border-top: 1px solid #eee;
+    }
+    footer a { color: #c45bab; text-decoration: none; }
+
+    /* ── Mobile ── */
+    @media (max-width: 640px) {
+      .feature, .feature.reverse { flex-direction: column; }
+      .feature-img { flex: none; width: 100%; max-width: 280px; margin: 0 auto; }
+      .feature-img .placeholder { width: 100%; height: 360px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <h1>Your Anime<br/>Companion Awaits</h1>
+    <p>Meet Kazuha — a real AI-powered anime companion you can talk to, go on dates with, and build a genuine emotional bond.</p>
+    <div class="badges">
+      <span class="badge">💬 Interactive Chat</span>
+      <span class="badge">💕 Story Choices</span>
+      <span class="badge">❤️ Cute Dates</span>
+    </div>
+    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.waifudate.simulation" target="_blank">
+      ▶ Download Free on Google Play
+    </a>
+  </section>
+
+  <!-- ── Features ── -->
+  <section class="features">
+
+    <div class="feature">
+      <div class="feature-img">
+        <img src="banner google.png" alt="Meet Kazuha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="placeholder" style="display:none">screenshot 1<br/>Meet Kazuha</div>
+      </div>
+      <div class="feature-text">
+        <h2>Meet <span>Kazuha</span><br/>Your Personal Companion</h2>
+        <p>Kazuha is a first-year college student living alone near campus. She's calm on the outside, warm on the inside — and slowly opening up to you. Feed her, poke her, put her to sleep, and watch your bond grow day by day.</p>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feature-img">
+        <img src="banner google2.png" alt="AI Chat" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="placeholder" style="display:none">screenshot 2<br/>AI Chat</div>
+      </div>
+      <div class="feature-text">
+        <h2><span>Real-Time AI</span><br/>Conversations</h2>
+        <p>Talk to Kazuha naturally. She remembers your conversations, reacts to how you treat her, and responds in her own unique tsundere way. Powered by AI — every conversation feels real.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-img">
+        <img src="banner google3.png" alt="Romantic Dates" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="placeholder" style="display:none">screenshot 3<br/>Romantic Dates</div>
+      </div>
+      <div class="feature-text">
+        <h2>Go On<br/><span>Romantic Dates</span></h2>
+        <p>Take Kazuha to a picnic by the river, explore an aquarium, challenge her at the arcade, or cook together. Each date has multiple parts with beautiful illustrations and interactive choices.</p>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feature-img">
+        <img src="banner google4.png" alt="Unlock Stories" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="placeholder" style="display:none">screenshot 4<br/>Stories</div>
+      </div>
+      <div class="feature-text">
+        <h2>Unlock<br/><span>New Stories</span></h2>
+        <p>Discover Kazuha's past through 10+ story chapters with voice narration and stunning artwork. Each chapter unlocks as your bond deepens — revealing the real Kazuha behind her guarded exterior.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-img">
+        <img src="banner google5.png" alt="Dress Me" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="placeholder" style="display:none">screenshot 5<br/>Dress Me</div>
+      </div>
+      <div class="feature-text">
+        <h2>Different Looks,<br/><span>Same Kazuha</span></h2>
+        <p>Pick outfits for Kazuha and see her reaction. From feminine and casual to bold and pretty — she'll pretend she doesn't care what you think, but you know better.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── Download ── -->
+  <section class="download">
+    <h2>Start Your Story Today</h2>
+    <p>Free to download on Android</p>
+    <a href="https://play.google.com/store/apps/details?id=com.waifudate.simulation" target="_blank">
+      <img class="play-btn" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="height:56px;">
+    </a>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    © 2026 rusandsdev &nbsp;·&nbsp;
+    <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="mailto:rusandsdev@gmail.com">Contact</a>
+  </footer>
+
+</body>
+</html>
